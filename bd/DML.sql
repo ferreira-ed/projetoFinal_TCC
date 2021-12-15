@@ -1,4 +1,4 @@
-Use Chamados
+Use Chamados;
 
 go
 
@@ -23,12 +23,35 @@ Values					('Senai','03774819000102','01202001','Brasil','São Paulo','São Paulo'
 
 go
 
-Insert Into Equipamento (NomeEquipamento,Descicao)
-Values					('Switch Cisco 2960', 'Switch de 24 Portas em otimo estado');
+Insert Into Equipamento (IdInstituicao,Marca,TipoEquipamento,NumeroPatrimonio,Quantidade)
+Values					(1,'Dell', 'Notebook', '1', '200');
 
 go
 
-Insert Into Chamado (IdUsuario,IdInstituicao,Localizacao,Motivo,Descricao,IdReceberChamado)
-Values				('C33FCD7E-E822-46AC-B52A-04729E59FF93',1,'3º Andar','Limpeza','Suco no chão, proximo ao bebedouro','E5CB23B7-84D3-4C61-8C17-A187A2772C94');
+Insert Into Chamado (IdUsuario,IdInstituicao,Data,TipoProblema,TipoServico,Classe,Andar,Sala,Descricao,Situacao,Prioridade)
+Values				('E8E0FA11-475F-4E3D-A116-86F320C924A9',1,'29/10/2021','Redes','Manutenção','Cabeamento de redes','2º andar','Sala 13','Cabo danificado na sala','Em atendimento', 'Alta Prioridade');
 
 go
+
+
+Insert into Usuario (IdTipoUsuario,EmailUsuario,SenhaUsuario)
+Values				(5,'usuario@usuario.com','usuario123');
+
+INSERT INTO Usuario		(NomeUsuario)
+VALUES				    ('UsuarioTeste')
+
+					
+
+
+Insert into TipoUsuario		(NomeTipoUsuario)
+Values						('Comum');
+	
+SELECT*FROM TipoUsuario
+
+SELECT*FROM Usuario
+
+SELECT*FROM Instituicao
+
+SELECT*FROM Equipamento
+
+SELECT*FROM Chamado

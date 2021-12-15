@@ -10,7 +10,7 @@ NomeTipoUsuario   VARCHAR(200)
 
 );
 go
-
+	
 CREATE TABLE Usuario (
 
 IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario),
@@ -18,7 +18,10 @@ IdUsuario UNIQUEIDENTIFIER PRIMARY KEY Default NEWID(),
 EmailUsuario VARCHAR(200) NOT NULL,
 SenhaUsuario VARCHAR(200) NOT NULL	
 
-);	
+);
+
+ALTER TABLE Usuario
+ADD NomeUsuario VARCHAR(100);
 go
 CREATE TABLE Instituicao (
 IdInstituicao   INT PRIMARY KEY IDENTITY, 
@@ -39,8 +42,10 @@ CREATE TABLE Equipamento (
 
 IdEquipamento   INT PRIMARY KEY IDENTITY,
 IdInstituicao INT FOREIGN KEY REFERENCES Instituicao (IdInstituicao),
-NomeEquipamento VARCHAR (200) NOT NULL,
-Descricao VARCHAR(200),
+Marca VARCHAR (200) NOT NULL,
+TipoEquipamento VARCHAR(200),
+NumeroPatrimonio VARCHAR(200),
+Quantidade VARCHAR(200),
 
 );
 go
@@ -48,12 +53,17 @@ go
 CREATE TABLE Chamado (
 
 IdChamado INT PRIMARY KEY IDENTITY,
-IdUsuario UNIQUEIDENTIFIER,
+IdUsuario UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Usuario(IdUsuario),
 IdInstituicao INT FOREIGN KEY REFERENCES Instituicao (IdInstituicao),
-IdReceberChamado UNIQUEIDENTIFIER,
-Localizacao VARCHAR (200) NOT NULL,
-Motivo VARCHAR (200) NOT NULL,
+Data DATETIME,
+TipoProblema VARCHAR (200) NOT NULL,
+TipoServico VARCHAR (200) NOT NULL,
+Classe VARCHAR (200) NOT NULL,
+Andar VARCHAR (200) NOT NULL,
+Sala VARCHAR (200) NOT NULL,
 Descricao VARCHAR(200),
+Situacao VARCHAR (200) NOT NULL,
+Prioridade VARCHAR (200) NOT NULL,
 
 );
 go
