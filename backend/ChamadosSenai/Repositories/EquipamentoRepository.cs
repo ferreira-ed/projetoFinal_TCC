@@ -15,24 +15,24 @@ namespace ChamadosSenai.Repositories
         {
             Equipamento EquipamentoBuscado = BuscarPorId(idEquipamento);
 
-            if (EquipamentoAtualizado.IdEquipamento > 0)
+            if (EquipamentoAtualizado.Marca != null)
             {
-                EquipamentoBuscado.IdEquipamento = EquipamentoAtualizado.IdEquipamento;
+                EquipamentoBuscado.Marca = EquipamentoAtualizado.Marca;
             }
 
-            if (EquipamentoAtualizado.IdInstituicao > 0)
+            if (EquipamentoAtualizado.TipoEquipamento != null)
             {
-                EquipamentoBuscado.IdInstituicao = EquipamentoAtualizado.IdInstituicao;
+                EquipamentoBuscado.TipoEquipamento = EquipamentoAtualizado.TipoEquipamento;
             }
 
-            if (EquipamentoAtualizado.NomeEquipamento != null)
+            if (EquipamentoAtualizado.NumeroPatrimonio != null)
             {
-                EquipamentoBuscado.NomeEquipamento = EquipamentoAtualizado.NomeEquipamento;
+                EquipamentoBuscado.NumeroPatrimonio = EquipamentoAtualizado.NumeroPatrimonio;
             }
 
-            if (EquipamentoAtualizado.Descricao != null)
+            if (EquipamentoAtualizado.Quantidade != null)
             {
-                EquipamentoBuscado.Descricao = EquipamentoAtualizado.NomeEquipamento;
+                EquipamentoBuscado.Quantidade = EquipamentoAtualizado.Quantidade;
             }
 
 

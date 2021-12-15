@@ -13,7 +13,6 @@ namespace ChamadosSenai.Domains
             Equipamentos = new HashSet<Equipamento>();
         }
 
-        public Guid? IdUsuario { get; set; }
         public int IdInstituicao { get; set; }
         public string NomeInstituicao { get; set; }
         public string Cnpj { get; set; }

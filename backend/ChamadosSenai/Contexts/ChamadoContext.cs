@@ -40,20 +40,47 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<Chamado>(entity =>
             {
                 entity.HasKey(e => e.IdChamado)
-                    .HasName("PK__Chamado__50020679B7D52AAD");
+                    .HasName("PK__Chamado__5002067975B179D3");
 
                 entity.ToTable("Chamado");
+
+                entity.Property(e => e.Andar)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Classe)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Data).HasColumnType("datetime");
 
                 entity.Property(e => e.Descricao)
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Localizacao)
+                entity.Property(e => e.Prioridade)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Motivo)
+                entity.Property(e => e.Sala)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Situacao)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TipoProblema)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TipoServico)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
@@ -61,22 +88,35 @@ namespace ChamadosSenai.Contexts
                 entity.HasOne(d => d.IdInstituicaoNavigation)
                     .WithMany(p => p.Chamados)
                     .HasForeignKey(d => d.IdInstituicao)
-                    .HasConstraintName("FK__Chamado__IdInsti__2F10007B");
+                    .HasConstraintName("FK__Chamado__IdInsti__300424B4");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.Chamados)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK__Chamado__IdUsuar__2F10007B");
             });
 
             modelBuilder.Entity<Equipamento>(entity =>
             {
                 entity.HasKey(e => e.IdEquipamento)
-                    .HasName("PK__Equipame__E309D87FDF0B2C8C");
+                    .HasName("PK__Equipame__E309D87F127A4FAC");
 
                 entity.ToTable("Equipamento");
 
-                entity.Property(e => e.Descricao)
+                entity.Property(e => e.Marca)
+                    .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.NomeEquipamento)
-                    .IsRequired()
+                entity.Property(e => e.NumeroPatrimonio)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Quantidade)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TipoEquipamento)
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
@@ -89,7 +129,7 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<Instituicao>(entity =>
             {
                 entity.HasKey(e => e.IdInstituicao)
-                    .HasName("PK__Institui__B771C0D87E9F6B4E");
+                    .HasName("PK__Institui__B771C0D8573B6889");
 
                 entity.ToTable("Instituicao");
 
@@ -148,7 +188,7 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TipoUsua__CA04062BEF456B84");
+                    .HasName("PK__TipoUsua__CA04062B2E4AD684");
 
                 entity.ToTable("TipoUsuario");
 
@@ -160,7 +200,7 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__5B65BF979CFD25CE");
+                    .HasName("PK__Usuario__5B65BF97D7576311");
 
                 entity.ToTable("Usuario");
 

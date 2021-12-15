@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1tmYKXsS0jUnu/DaIkDbHTvlX5GgKAzLEk31w3pU16GDTb39Yl0tFhCop80V022Vbrl8IGhZHy8S8nqLHPWUjA==",
+  "dgSpecHash": "p+xE2A2uZlqGn0yMO3rCV/2wQkJNpcsULVw/PlYoi4kujT10bPYKdVLvz/Vo+N28pPBzi7ClSgSjbq0+6sEcUA==",
   "success": true,
-  "projectFilePath": "E:\\Meus Documentos\\Área de Trabalho\\ChamadosSenai\\backend\\ChamadosSenai\\ChamadosSenai.csproj",
+  "projectFilePath": "E:\\Meus Documentos\\Área de Trabalho\\projetoF2inal_TCC\\backend\\ChamadosSenai\\ChamadosSenai.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eduardo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Eduardo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.11\\microsoft.aspnetcore.authentication.jwtbearer.5.0.11.nupkg.sha512",

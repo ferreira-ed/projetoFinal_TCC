@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Meus Documentos\\Área de Trabalho\\ChamadosSenai\\backend\\ChamadosSenai\\ChamadosSenai.csproj": {}
+    "E:\\Meus Documentos\\Área de Trabalho\\projetoF2inal_TCC\\backend\\ChamadosSenai\\ChamadosSenai.csproj": {}
   },
   "projects": {
-    "E:\\Meus Documentos\\Área de Trabalho\\ChamadosSenai\\backend\\ChamadosSenai\\ChamadosSenai.csproj": {
+    "E:\\Meus Documentos\\Área de Trabalho\\projetoF2inal_TCC\\backend\\ChamadosSenai\\ChamadosSenai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Meus Documentos\\Área de Trabalho\\ChamadosSenai\\backend\\ChamadosSenai\\ChamadosSenai.csproj",
+        "projectUniqueName": "E:\\Meus Documentos\\Área de Trabalho\\projetoF2inal_TCC\\backend\\ChamadosSenai\\ChamadosSenai.csproj",
         "projectName": "ChamadosSenai",
-        "projectPath": "E:\\Meus Documentos\\Área de Trabalho\\ChamadosSenai\\backend\\ChamadosSenai\\ChamadosSenai.csproj",
+        "projectPath": "E:\\Meus Documentos\\Área de Trabalho\\projetoF2inal_TCC\\backend\\ChamadosSenai\\ChamadosSenai.csproj",
         "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-        "outputPath": "E:\\Meus Documentos\\Área de Trabalho\\ChamadosSenai\\backend\\ChamadosSenai\\obj\\",
+        "outputPath": "E:\\Meus Documentos\\Área de Trabalho\\projetoF2inal_TCC\\backend\\ChamadosSenai\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",

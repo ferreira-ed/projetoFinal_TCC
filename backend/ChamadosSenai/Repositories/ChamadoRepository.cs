@@ -16,29 +16,14 @@ namespace ChamadosSenai.Repositories
             Chamado ChamadoBuscado = BuscarPorId(idChamado);
 
 
-            if (ChamadoAtualizado.IdUsuario != null)
+            if (ChamadoAtualizado.Situacao != null)
             {
-                ChamadoBuscado.IdUsuario = ChamadoAtualizado.IdUsuario;
+                ChamadoBuscado.Situacao = ChamadoAtualizado.Situacao;
             }
 
-            if (ChamadoAtualizado.IdInstituicao > 0)
+            if (ChamadoAtualizado.Prioridade != null)
             {
-                ChamadoBuscado.IdInstituicao = ChamadoAtualizado.IdInstituicao;
-            }
-
-            if (ChamadoAtualizado.IdReceberChamado != null)
-            {
-                ChamadoBuscado.IdReceberChamado = ChamadoAtualizado.IdReceberChamado;
-            }
-
-            if (ChamadoAtualizado.Localizacao != null)
-            {
-                ChamadoBuscado.Localizacao = ChamadoAtualizado.Localizacao;
-            }
-
-            if (ChamadoAtualizado.Motivo != null)
-            {
-                ChamadoBuscado.Motivo = ChamadoAtualizado.Motivo;
+                ChamadoBuscado.Prioridade = ChamadoAtualizado.Prioridade;
             }
 
             if (ChamadoAtualizado.Descricao != null)
