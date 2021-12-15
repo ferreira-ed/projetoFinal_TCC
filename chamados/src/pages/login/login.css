@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* RESET */
+
+/* reseta algumas informações */
+body, h1, h2, p, ul, li, a{
+    /* tira as margens padrão (deixa as coisas mais coladas) */
+    margin: 0px;
+    padding: 0px;
+}
+
+/* atribui novas configurações para o body */
+body{
+    font-family: "Nunito", Helvetica, Arial, sans-serif;
+    color: #222222;
+}
+
+/* aqui remove os estilos das listas */
+ul{
+    list-style: none;
+}
+
+/* aqui remove o text-decoration */
+a{
+    text-decoration: none;
+}
+.img-side2{
+    position:absolute;
+    width: 50%;
+    height: 790px;
+    left: 0px;
+    top: 0px;
+}
+.content-section2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: '100w';
+    height: '100vh';
+    margin-right: '20em';
+    margin-bottom: '7em';
+}
+
+.form2{
+    display: 'flex';
+    margin: 0;
+    align-items: 'center';
+    flex-direction: 'column';
+}
+
+.logo2{
+    width: 300px;
+    height: 89px;
+    margin-top: 4em;
+    margin-left: 3.5em;
+    
+}
+
+.texto-cadastro2{
+    
+    font-family: Roboto;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-right: 7em;
+    margin-top: 2em;
+}
+
+.name-top2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 3em;
+    margin-left: 2.4em;
+}
+
+.input-text2{
+    margin-top: 1.5em;
+    width: 311px;
+    border-bottom-width: 2px;
+    border-bottom-color: #FE0000;
+    border-top-width: 0;
+    border-left: 0;
+    border-right: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.3em;
+}
+
+.button-logar2{
+    font-family: Roboto;
+    width: 162px;
+    height: 36px;
+    border: 0;
+    background-color:  #000000;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.button-sub2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+    margin-top: 4em;
+    font-weight: bold;
+    margin-left: 4.3em;
+    
+}
+
+.button-logar2{
+    margin-top: 4em;
+    margin-left: 8em
+}
+
+.button-logar2:hover{
+    background-color: #FE0000;
+    color: #fff;
+}

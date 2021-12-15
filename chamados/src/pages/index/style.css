@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+.content{
+    height: 100%;
+    
+}
+
+.cabecalho__logo{
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 5px;
+}
+.cabecalho__logo img {
+    width: 120px;
+}
+
+figcaption {
+    margin-top: 10px;
+}
+
+.cabecalho__menuNavegacao {
+    position: absolute;
+   flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    height: 100%;
+    max-height: 2000px;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+}
+
+.cabecalho__menuItem img {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.cabecalho__menuOption:nth-child(2) {
+    padding: 15px;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.cabecalho__menuOption:nth-child(3) {
+    padding: 15px;
+    transition: 0.5s;
+}
+
+.cabecalho__menuOption:nth-child(4) {
+    padding: 15px;
+    transition: 0.5s;
+}
+
+.cabecalho__menuOption:hover {
+    background-color: rgba(169, 169, 169, 0.822);
+}
+
+.cabecalho__menuOption a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.cabecalho__menuOption img {
+    width: 30px;
+}
+
+.btn-sair {
+    color: red;
+}
+
+.chamados{
+    width: calc(100% - 130px);
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    
+}
+
+.chamados .part1{
+    padding: 50px 0px 30px 50px; 
+    
+    width: 50%;
+    border-right: 5px solid lightblue;
+}
+
+.content_chamado h2{
+    margin-bottom: 15px;
+}
+
+.content_chamado > p{
+    background-color: red;
+    color: white;
+    display: inline-block;
+    padding:0 10px;
+    border-radius: 5px;
+}
+.content_chamado .anexo{
+    margin-top: 10px;
+    color: rgb(124, 123, 123);
+}
+
+.content_chamado .anexo .wrapper{
+    border: 1px solid rgb(74, 145, 168); 
+    padding: 0 10px;
+     border-radius: 5px;
+    display: inline;
+   font-size: 18px;
+   background-color: rgb(226, 240, 245); 
+}
+
+.content_chamado .anexo .wrapper p{
+   color: rgb(153, 207, 224);
+    display: inline-block;
+}
+
+.content_chamado form{
+    margin-top:10px;
+}
+
+.content_chamado form input[type=text]{
+    padding:8px 0;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.content_chamado form span{
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 5px;
+}
+
+.content_chamado form .data{
+    
+    margin-top: 20px;
+}
+
+.content_chamado form input[type=date]{
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5); 
+    box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5);
+}
+
+.content_chamado form select{
+    width: 100px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5); 
+    box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5);
+}
+
+.content_chamado form .tipo_problema{
+    margin-top: 15px;
+}
+
+.content_chamado form  as{
+    color: red;
+}
+
+.content_chamado form .tipo_servico{
+    margin-top:10px;
+}
+.content_chamado form .tipo_servico span{
+margin-right: 20px;
+}
+.content_chamado form .classe{
+    margin-top:20px;
+}
+
+.content_chamado form .classe select{
+    width: 200px;
+    -webkit-box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5); 
+    box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5);
+    border:1px solid #ccc;
+}
+
+.content_chamado form .Andar select{
+    width: 50px;
+    -webkit-box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5); 
+    box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5);
+}
+
+.content_chamado form .Andar{
+    margin-top: 150px;
+    display: inline-block;
+}
+
+.content_chamado form .Sala select{
+    width: 70px;
+    -webkit-box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5); 
+    box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5);
+}
+
+.content_chamado form .Sala{
+    display: inline-block;
+  margin-left: 80px;
+
+}
+
+.content_chamado form .Detalhes{
+    vertical-align: top;
+}
+
+.content_chamado form .Detalhes span{
+    position: relative;
+    top: 25px;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.content_chamado form .Detalhes textarea{
+padding: 10px;
+    margin-top: 20px;
+    width: 300px;
+height: 200px;
+background-color: rgb(235, 230, 230);
+border: 0;
+resize: none;
+display: inline-block;
+}
+
+.content_chamado form .Detalhes textarea:focus{
+outline: 0;
+}
+
+.content_chamado form button{
+    background-color: black;
+    color: white;
+    padding: 5px 25px;
+    border: 0;
+    border-radius: 6px;
+    text-transform:uppercase;
+    font-weight: bold;    
+}
+
+.content_chamado form .acao{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chamados .part2{
+width: 50%;
+position: absolute;
+right: 0;
+top: 0;
+padding: 30px 0 0 50px;
+}
+
+.content_chamado2 p{
+margin-top: 8px;
+    color: #ccc;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.content_chamado2 textarea{
+    margin-top: 10px;
+    background-color: rgb(235, 230, 230);
+    width: 400px;
+    height: 200px;
+    border: 0;
+    resize: none;
+    
+    padding: 20px 10px 10px 10px;
+
+}
+
+.content_chamado2 textarea:focus{
+    outline: 0;
+}
