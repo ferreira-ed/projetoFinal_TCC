@@ -22,7 +22,7 @@ export default class Painel extends Component{
     }
 
     componentDidMount(){
-
+      this.buscarEventos();
     }
 
     componentWillUnmount(){
@@ -46,7 +46,7 @@ export default class Painel extends Component{
                   //atualiza o state com os dados da api
                   listaChamados : resposta.data
               })
-              console.log(this.state.listaChamados)
+              console.log(resposta.data)
           }
       })
 
@@ -118,132 +118,24 @@ export default class Painel extends Component{
          <div class="filtro"><i class="fas fa-arrow-right"></i> Filtros<button>Nenhum</button></div>
         </div>
 
-          <div class="tabela">
-          <div class="t_geral">
-            <div class="borda icone"></div>
-            <div class="borda icone"><i class="fas fa-pencil-alt"></i><i class="fas fa-trash-alt"></i></div>
-            <div class="borda icone"><i class="fas fa-pencil-alt"></i><i class="fas fa-trash-alt"></i></div>
-            <div class="borda icone"><i class="fas fa-pencil-alt"></i><i class="fas fa-trash-alt"></i></div>
-            <div class="borda icone"><i class="fas fa-pencil-alt"></i><i class="fas fa-trash-alt"></i></div>
-        </div>
           
-          <div class="t_geral">
-            <div class="borda nome">
-                <p><b>Nome</b></p>
-            </div>
-            <div class="borda nome">
-                <p>Gabriel Alves</p>
-            </div>
-            <div class="borda nome">
-                <p>Elias Alves</p>
-            </div>
-            <div class="borda nome">
-                <p>José Alteiro</p>
-            </div>
-            <div class="borda nome">
-                <p>Felipe dias Santos</p>
-            </div>
 
-          </div>
-         
-          <div class="t_geral">
-            <div class="borda tempo">
-                <p><b>Data</b></p>
-              </div>
-              <div class="borda tempo">
-                <p>9/11/2021 - 14:54</p>
-              </div>
-              <div class="borda tempo">
-                <p>12/11/2021 - 14:54</p>
-              </div>
-              <div class="borda tempo">
-                <p>18/11/2021 - 13:54</p>
-              </div>
-              <div class="borda tempo">
-                <p>1/10/2021 - 01:54</p>
-              </div>
-          </div>
-          
-          <div class="t_geral">
-            <div class="borda Tipo_servico">
-                <p><b>Tipo de serviço</b></p>
-              </div>
-              <div class="borda Tipo_servico">
-                <p>Manutenção</p>
-              </div>
-              <div class="borda Tipo_servico">
-                <p>Limpeza</p>
-              </div>
-              <div class="borda Tipo_servico">
-                <p>Suporte</p>
-              </div>
-              <div class="borda Tipo_servico">
-                <p>Manutenção</p>
-              </div>
-          </div>
-          <div class="t_geral">
-            <div class="borda situacao">
-                <p><b>Situação</b></p>
-              </div>
-              <div class="borda situacao">
-                <p>Em atendimento</p>
-              </div>
-              <div class="borda situacao">
-                <p>Pausado</p>
-              </div>
-              
-              <div class="borda situacao">
-                <p>Pausado</p>
-              </div>
-              <div class="borda situacao">
-                <p>Pausado</p>
-              </div>
-            </div>
-          
-          <div class="t_geral">
-            <div class="borda Prioridade">
-                <p><b>Prioridade</b></p>
-            </div>
-            <div class="borda Prioridade">
-                <p>Alta Prioridade</p>
-            </div>
-            <div class="borda Prioridade">
-                <p>Baixa Prioridade</p>
-            </div>
-            <div class="borda Prioridade">
-                <p>Critico</p>
-            </div>
-            <div class="borda Prioridade">
-                <p>Média Prioridade</p>
-            </div>
-          </div>
-       
-          <div class="t_geral">
-            <div class="borda Observacaes">
-                <p><b>Observações</b></p>
-            </div>
-            <div class="borda Observacaes">
-                
-            </div>
-            <div class="borda Observacaes">
-                
-            </div>
-            <div class="borda Observacaes">
-                
-            </div>
-            <div class="borda Observacaes">
-          
+         <div class="container">
             <thead>
               <tr>
-                  <th>#</th>
-                  <th>Evento</th>
-                  <th>Descrição</th>
+                  <th>id</th>
                   <th>Data</th>
-                  <th>Acesso</th>
-                  <th>Tipo de Evento</th>
-                  <th>Localização</th>
+                  <th>Tipo Problema</th>
+                  <th>Tipo Serviço</th>
+                  <th>Classe</th>
+                  <th>Andar</th>
+                  <th>Sala</th>
+                  <th>Prioridade</th>
+                  <th>Descrição</th>
               </tr>
-          </thead>
+              
+            </thead> 
+        
           <tbody>
 
           {
@@ -262,14 +154,9 @@ export default class Painel extends Component{
               )
           })
       }
-            </tbody>    
+            </tbody>   
             </div>
-          </div>
-       
-          </div>
-
-
-       </section>
+            </section>
             </main>
         )
     }
