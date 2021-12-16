@@ -1,6 +1,7 @@
 import {Component} from  'react'
 import api from '../../services/api'
 import '../painel/equip.css'
+import axios from 'axios'
 
 import logoSenai from "../../assets/img/logoSenai.png"
 import pessoa from "../../assets/img/pessoa.png"
@@ -16,7 +17,7 @@ export default class Painel extends Component{
     constructor(props){
         super(props)
         this.state = {
-
+          listaChamados : []
         }
     }
 
@@ -27,6 +28,30 @@ export default class Painel extends Component{
     componentWillUnmount(){
 
     }
+
+    //faz a requisição e traz a lista de eventos
+    buscarEventos = () => {
+      //chama a api usando o axios
+      axios('http://localhost:5000/api/chamados', {
+
+            headers : {
+                'Authorization' : `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+
+      .then(resposta => {
+          //se a requisição retornar 200
+          if(resposta.status === 200){
+              this.setState({
+                  //atualiza o state com os dados da api
+                  listaChamados : resposta.data
+              })
+              console.log(this.state.listaChamados)
+          }
+      })
+
+      .catch(erro => console.log(erro))
+  }
 
     sair = () => {
         localStorage.removeItem("token")
@@ -207,12 +232,43 @@ export default class Painel extends Component{
                 
             </div>
             <div class="borda Observacaes">
-                
+          
+            <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Evento</th>
+                  <th>Descrição</th>
+                  <th>Data</th>
+                  <th>Acesso</th>
+                  <th>Tipo de Evento</th>
+                  <th>Localização</th>
+              </tr>
+          </thead>
+          <tbody>
+
+          {
+          this.state.listaChamados.map( evento => {
+              return(
+                  <tr key={evento.idChamado}>
+
+                      <td>{evento.idChamado}</td>
+                      <td>{evento.data}</td>
+                      <td>{evento.sala}</td>
+                      <td>{evento.descricao}</td>
+                      <td>{evento.andar}</td>
+                      <td>{evento.tipoServico}</td>
+                      <td>{evento.tipoProblema}</td>
+                  </tr>
+              )
+          })
+      }
+            </tbody>    
             </div>
           </div>
        
           </div>
-          
+
+
        </section>
             </main>
         )

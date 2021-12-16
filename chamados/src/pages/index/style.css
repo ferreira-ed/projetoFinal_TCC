@@ -36,7 +36,7 @@ figcaption {
     display: flex;
     flex-direction: column;
     width: 130px;
-    height: 100%;
+    height: 880px;
     max-height: 2000px;
     background-color: #000;
     color: #FFF;
@@ -135,12 +135,14 @@ figcaption {
     padding:8px 0;
     border: 0;
     border-bottom: 1px solid #ccc;
+    text-align: center;
 }
 
 .content_chamado form span{
     font-size: 14px;
     font-weight: 300;
     margin-right: 5px;
+    font-weight: bold;
 }
 
 .content_chamado form .data{
@@ -152,6 +154,7 @@ figcaption {
   border: 1px solid #ccc;
   -webkit-box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5); 
     box-shadow: 2px 5px 14px -7px rgba(0,0,0,0.5);
+    margin-left: 7.5em;
 }
 
 .content_chamado form select{
@@ -162,7 +165,8 @@ figcaption {
 }
 
 .content_chamado form .tipo_problema{
-    margin-top: 15px;
+    margin-top: 30px;
+    font-weight: bold;
 }
 
 .content_chamado form  as{
@@ -170,13 +174,17 @@ figcaption {
 }
 
 .content_chamado form .tipo_servico{
-    margin-top:10px;
+    margin-top:30px;
+    font-weight: bold;
+   
+    
 }
 .content_chamado form .tipo_servico span{
 margin-right: 20px;
 }
 .content_chamado form .classe{
-    margin-top:20px;
+    margin-top:30px;
+    font-weight: bold;
 }
 
 .content_chamado form .classe select{
@@ -193,8 +201,9 @@ margin-right: 20px;
 }
 
 .content_chamado form .Andar{
-    margin-top: 150px;
+    margin-top: 40px;
     display: inline-block;
+    font-weight: bold;
 }
 
 .content_chamado form .Sala select{
@@ -204,13 +213,14 @@ margin-right: 20px;
 }
 
 .content_chamado form .Sala{
-    display: inline-block;
-  margin-left: 80px;
+   margin-top: 35px;
+   font-weight: bold;
 
 }
 
 .content_chamado form .Detalhes{
     vertical-align: top;
+    font-weight: bold;
 }
 
 .content_chamado form .Detalhes span{
@@ -242,12 +252,17 @@ outline: 0;
     border: 0;
     border-radius: 6px;
     text-transform:uppercase;
-    font-weight: bold;    
+    font-weight: bold;  
+    margin-right: 10em;  
 }
 
+.content_chamado form button:hover{
+    background-color:red
+}
 .content_chamado form .acao{
     text-align: center;
     margin-top: 20px;
+    height: 10px
 }
 
 .chamados .part2{
@@ -279,4 +294,12 @@ margin-top: 8px;
 
 .content_chamado2 textarea:focus{
     outline: 0;
+}
+.input-teste{
+    box-shadow: 2px 1px 7px;
+    background-color: #b7b7b7;
+    border-radius: 2px;
+    margin-left: 10px;
+    width: 13em;
+
 }

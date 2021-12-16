@@ -12,6 +12,7 @@ export default class Index extends Component{
     constructor(props){
         super(props)
         this.state = {
+            idUsuario : '',
             nomeUsuario : '',
             data : new Date(),
             tipoProblema : '',
@@ -19,7 +20,8 @@ export default class Index extends Component{
             classe : '',
             andar : '',
             sala : '',
-            descricao : ''
+            descricao : '',
+            prioridade: ''
         }
     }
 
@@ -44,7 +46,8 @@ export default class Index extends Component{
             classe : this.state.classe,
             andar : this.state.andar,
             sala : this.state.sala,
-            descricao : this.state.descricao
+            descricao : this.state.descricao,
+            prioridade : this.state.prioridade
         }, {
             headers : {
                 "Authorization" : "Bearer " + localStorage.getItem("token")
@@ -122,35 +125,105 @@ export default class Index extends Component{
        <div class="wrapper"><i class="fas fa-paperclip"></i><p>Anexos</p></div>
      </div>
        <form onSubmit={this.CadastrarChamada}>
-      <p>Quem está solicitando o chamado?</p>
+      <p style={{fontWeight: 'bold'}}>Quem está solicitando o chamado?</p>
        <input 
+        className="input-teste"
        type="text" 
        placeholder="Saulo Santos" 
        name='nomeUsuario'
        value={this.state.nomeUsuario}
-       
+       onChange={this.atualizarCampo}
+       style={{marginTop:15}}
+       required
        />
        <div class="data"><span>Data</span> <input type="date" value={this.state.data} name="data" onChange={this.atualizarCampo} required/></div>
-       <div class="tipo_problema"><span>Tipo de problema <as>*</as></span><select>
-           <option value="redes" selected>redes</option>
-       </select></div>
-       <div class="tipo_servico"><span>Tipo de serviço <as>*</as></span><select>
-        <option value="redes" selected>manutenção</option>
-    </select></div>
-    <div class="classe" value={this.state.tipoProblema} name="tipoProblema" onChange={this.atualizarCampo}><span>classe </span><select>
-        <option value="redes" selected>Selecione</option>
-        <option value="Cabeamento de redes" >Cabeamento de redes</option>
-        <option value="Login de rede" >Login de rede</option>
-        <option value="Equipamentos danificados" >Equipamentos danificados</option>
-        <option value="Falta de internet" >Falta de internet</option>
-        <option value="Problema de comunicação com a impressora" >Problema de comunicação com a impressora</option>
-        <option value="Problema de compartilhameno de dados" >Problema de compartilhameno de dados</option>
-        <option value="outros..." >outros...</option>
-    </select></div>
- <div class="Andar"><span>Andar <as>*</as></span><select><option value="2°"selected>2°</option></select></div>    
- <div class="Sala"><span>Sala <as>*</as></span><select><option value="sala 13"selected>sala 13</option></select></div>
- <div class="Detalhes"><span>Detalhes da Solicitação</span><textarea placeholder="Digite.."></textarea></div>
-<div class="acao"><button>Enviar</button></div>
+       <div class="tipo_problema">Tipo de problema
+           <input
+           className="input-teste"
+           type='text'
+           name="tipoProblema"
+           value={this.state.tipoProblema}
+           onChange={this.atualizarCampo}
+        //    style={{marginLeft: '0.5em', backgroundColor: '#B7B7B7', borderRadius: 4, width: '13em'}}
+           placeholder='Ex: Redes'
+           required
+           />
+       </div>
+       <div class="tipo_servico">Tipo de serviço
+       <input
+            className="input-teste"
+           type='text'
+           name="tipoServico"
+           value={this.state.tipoServico}
+           onChange={this.atualizarCampo}
+           style={{marginLeft: '2em'}}
+           placeholder='Ex: Manutenção'
+           required
+           />
+     </div>
+    <div class="classe" value={this.state.tipoProblema} name="tipoProblema" onChange={this.atualizarCampo}> Classe
+        <input
+            className="input-teste"
+           type='text'
+           name="classe"
+           value={this.state.classe}
+           onChange={this.atualizarCampo}
+           style={{marginLeft: '6.5em'}}
+           placeholder='Ex: Falta de internet'
+           required
+           />
+
+    </div>
+ <div class="Andar">Andar
+        <input
+            className="input-teste"
+           type='text'
+           name="andar"
+           value={this.state.andar}
+           onChange={this.atualizarCampo}
+           style={{marginLeft: '7em'}}
+           placeholder='n°2'
+           required
+           />
+</div>    
+ <div class="Sala">Sala
+        <input
+        className="input-teste"
+           type='text'
+           name="sala"
+           value={this.state.sala}
+           onChange={this.atualizarCampo}
+           style={{marginLeft: '8em'}}
+           placeholder='Sala 3'
+           required
+           />
+ </div>
+ 
+ <div class="Sala">Prioridade
+        <input
+        className="input-teste"
+           type='text'
+           name="prioridade"
+           value={this.state.prioridade}
+           onChange={this.atualizarCampo}
+           style={{marginLeft: '5em'}}
+           placeholder='Alta, Baixa'
+           required
+           />
+ </div>
+ <div class="Detalhes" style={{marginTop:30}}>Detalhes da solicitação
+        <input
+        className="input-teste"
+        type='text'
+           name="descricao"
+           value={this.state.descricao}
+           onChange={this.atualizarCampo}
+           style={{marginLeft: '1em', marginTop: '2em', display: 'flex', marginTop: 20, width:'20em', height: '10em', marginRight:'2em', textAlign:''}}
+           placeholder='Digite Aqui...'
+           required
+           />
+        </div>
+<div class="acao"><button type='submit' style={{marginBottom: '20em'}}>Enviar</button></div>
 </form>
 
     </div>
@@ -165,7 +238,7 @@ export default class Index extends Component{
 </section>
 
 </div>
-            </main>
+        </main>
         )
     }
 }
