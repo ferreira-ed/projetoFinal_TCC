@@ -119,43 +119,44 @@ export default class Painel extends Component{
         </div>
 
           
+        <div class="container">
+             <table class="tb">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Data</th>
+                    <th>Tipo Problema</th>
+                    <th>Tipo Serviço</th>
+                    <th>Classe</th>
+                    <th>Andar</th>
+                    <th>Sala</th>
+                    <th>Prioridade</th>
+                    <th>Descrição</th>
+                </tr>
+                
+                </thead> 
+            
+            <tbody>
 
-         <div class="container">
-            <thead>
-              <tr>
-                  <th>id</th>
-                  <th>Data</th>
-                  <th>Tipo Problema</th>
-                  <th>Tipo Serviço</th>
-                  <th>Classe</th>
-                  <th>Andar</th>
-                  <th>Sala</th>
-                  <th>Prioridade</th>
-                  <th>Descrição</th>
-              </tr>
-              
-            </thead> 
-        
-          <tbody>
+            {
+            this.state.listaChamados.map( evento => {
+                return(
+                    <tr key={evento.idChamado}>
 
-          {
-          this.state.listaChamados.map( evento => {
-              return(
-                  <tr key={evento.idChamado}>
-
-                      <td>{evento.idChamado}</td>
-                      <td>{evento.data}</td>
-                      <td>{evento.sala}</td>
-                      <td>{evento.descricao}</td>
-                      <td>{evento.andar}</td>
-                      <td>{evento.tipoServico}</td>
-                      <td>{evento.tipoProblema}</td>
-                  </tr>
-              )
-          })
-      }
-            </tbody>   
-            </div>
+                        <td>{evento.idChamado}</td>
+                        <td>{evento.data}</td>
+                        <td>{evento.sala}</td>
+                        <td>{evento.descricao}</td>
+                        <td>{evento.andar}</td>
+                        <td>{evento.tipoServico}</td>
+                        <td>{evento.tipoProblema}</td>
+                    </tr>
+                )
+            })
+        }
+                </tbody>   
+                </table>
+                </div>
             </section>
             </main>
         )
