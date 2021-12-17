@@ -36,6 +36,15 @@ export default class Equipamentos extends Component{
 
     }
 
+    LimparCampos = () => {
+        this.setState({
+            marca : '',
+            tipoEquipamento: '',
+            numeroPatrimonio: '',
+            quantidade : ''
+        })
+    }
+
     sair = () => {
         localStorage.removeItem("token")
         this.props.history.push("/")
@@ -88,7 +97,9 @@ export default class Equipamentos extends Component{
         })
 
         //atualiza a lista de eventos, sem o usuario precisar executar uma ação
-        .then(this.buscarEventos)
+        .then(this.LimparCampos)
+
+
     }
 
     //atualiza o state cada vez que há uma alteração no input
@@ -163,15 +174,14 @@ export default class Equipamentos extends Component{
                                 <label
                                 
                                 >Tipo de equipamento</label>
-                                <select
+                                <input
                                  style={{backgroundColor: '#B7B7B7', borderRadius: 3}}
                                  name="tipoEquipamento"
                                  value={this.state.tipoEquipamento}
+                                 placeholder='Ex: PC, Notebook'
+                                 onChange={this.atualizaState}
                                >
-                                    <option selected >Selecionado</option>
-                                    <option value="1" required>PC</option>
-                                    <option value="2" required>Notebook</option>
-                                </select>
+                                </input>
                             </div >
                             <div class="wrapper">
                                 <div class="geral Patrimonio">
@@ -200,7 +210,7 @@ export default class Equipamentos extends Component{
                                     />
                                 </div>
                             </div>
-                            <button type='submit' style={{fontSize: 12, width: '10em', height: '3em', borderRadius: 4}}>CADASTRAR</button>
+                            <button class ="butao" type='submit' style={{fontSize: 12, width: '10em', height: '3em', borderRadius: 4}}>CADASTRAR</button>
                         </form>
                     </div>
                     <img src={fone}/>

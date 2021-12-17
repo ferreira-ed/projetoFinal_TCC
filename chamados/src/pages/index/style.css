@@ -180,7 +180,7 @@ figcaption {
     
 }
 .content_chamado form .tipo_servico span{
-margin-right: 20px;
+    margin-right: 20px;
 }
 .content_chamado form .classe{
     margin-top:30px;
@@ -231,18 +231,18 @@ margin-right: 20px;
 }
 
 .content_chamado form .Detalhes textarea{
-padding: 10px;
+    padding: 10px;
     margin-top: 20px;
     width: 300px;
-height: 200px;
-background-color: rgb(235, 230, 230);
-border: 0;
-resize: none;
-display: inline-block;
+    height: 200px;
+    background-color: rgb(235, 230, 230);
+    border: 0;
+    resize: none;
+    display: inline-block;
 }
 
 .content_chamado form .Detalhes textarea:focus{
-outline: 0;
+    outline: 0;
 }
 
 .content_chamado form button{
@@ -266,15 +266,15 @@ outline: 0;
 }
 
 .chamados .part2{
-width: 50%;
-position: absolute;
-right: 0;
-top: 0;
-padding: 30px 0 0 50px;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 30px 0 0 50px;
 }
 
 .content_chamado2 p{
-margin-top: 8px;
+    margin-top: 8px;
     color: #ccc;
     font-weight: 400;
     font-size: 16px;
@@ -302,4 +302,18 @@ margin-top: 8px;
     margin-left: 10px;
     width: 13em;
 
+}
+
+.botao{
+    border: 0;
+    background-color: #324960;
+    color: #fff ; 
+    font-weight: bold; 
+    width: 4em;
+    height: 2em; 
+    border-radius: 3px
+}
+
+.botao:hover{
+    background-color: black ;
 }

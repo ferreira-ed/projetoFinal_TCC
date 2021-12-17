@@ -14,15 +14,15 @@ import Index from './pages/index/index'
 import Painel from './pages/painel/painel'
 import Equipamentos from './pages/equipamentos/equipamentos'
 
-// const PermissaoMed = ({component : Component}) => (
-//   <Route 
-//     render ={ props =>
-//       usuarioAutenticado() && parseJwt().role === "2" ?
-//       <Component {...props} /> :
-//       <Redirect to = 'login' />
-//     }
-//   />
-// )
+const PermissaoAdm = ({component : Component}) => (
+  <Route 
+    render ={ props =>
+      usuarioAutenticado() && parseJwt().role === "4" ?
+      <Component {...props} /> :
+      <Redirect to = 'login' />
+    }
+  />
+)
 
 // const PermissaoPac = ({component : Component}) => (
 //   <Route 
@@ -42,8 +42,8 @@ const routing = (
         <Route path = "/cadastro" component ={Cadastro}/>
         <Route path = "/login" component ={Login}/>
         <Route path = "/index" component ={Index}/>
-        <Route path = "/painel" component ={Painel}/>
-        <Route path = "/equipamentos" component ={Equipamentos}/>
+        <PermissaoAdm path = "/painel" component ={Painel}/>
+        <PermissaoAdm path = "/equipamentos" component ={Equipamentos}/>
         <Route path = "/notfound" component = {NotFound}/>
         //redireciona para notfound, caso nenhuma outra seja encontrada
         <Redirect to = "/notfound"/>

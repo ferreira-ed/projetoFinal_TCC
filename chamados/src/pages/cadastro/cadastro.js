@@ -25,6 +25,7 @@ class Cadastro extends Component{
          api.post('/usuarios', {
             EmailUsuario : this.state.email,
             SenhaUsuario: this.state.senha,
+            nomeUsuario : this.state.nomeUsuario
         })
 
         
@@ -67,6 +68,7 @@ class Cadastro extends Component{
                         <form class="form1" onSubmit={this.login} >
                             <img class="logo" src={logo} style={{width: 300, height: 89, marginBottom: '2em'}}/>
                             <h2 class="texto-cadastro">Faça seu cadastro para acessar a plataforma</h2>
+
                             <p class="name-top">Email</p>
                             <input
                                 class="input-text"

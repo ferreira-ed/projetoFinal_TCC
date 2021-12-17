@@ -29,6 +29,34 @@ export default class Painel extends Component{
 
     }
 
+    //exclui um tipo de evento
+    excluirTEid = (chamado) => {
+
+        console.log("O tipo de evento " + chamado.idChamado + " foi selecionado")
+
+        //chama a api e passa o id do tipo de evento que será excluido, pela url na requisição
+        api.delete('/chamados/' + chamado.idChamado,
+        {
+            
+            headers : {
+                'Authorization' : `Bearer ${localStorage.getItem('token')}`
+              }
+        })
+
+        .then(resposta => {
+            if (resposta.status === 204){
+                    console.log("Tipo de evento " + chamado.idChamado + " foi excluido!")
+                }
+            
+        })
+
+        .then(this.buscarEventos)
+
+        .then(this.LimparCampos)
+
+        .catch(erro => console.log(erro))
+    }
+
     //faz a requisição e traz a lista de eventos
     buscarEventos = () => {
       //chama a api usando o axios
@@ -124,6 +152,7 @@ export default class Painel extends Component{
                 <thead>
                 <tr>
                     <th>id</th>
+                    <th>Usuario</th>
                     <th>Data</th>
                     <th>Tipo Problema</th>
                     <th>Tipo Serviço</th>
@@ -144,12 +173,25 @@ export default class Painel extends Component{
                     <tr key={evento.idChamado}>
 
                         <td>{evento.idChamado}</td>
+                        <td>{evento.nomeUsuario}</td>
                         <td>{evento.data}</td>
-                        <td>{evento.sala}</td>
-                        <td>{evento.descricao}</td>
-                        <td>{evento.andar}</td>
-                        <td>{evento.tipoServico}</td>
                         <td>{evento.tipoProblema}</td>
+                        <td>{evento.tipoServico}</td>
+                        <td>{evento.classe}</td>
+                        <td>{evento.andar}</td>
+                        <td>{evento.sala}</td>
+                        <td>{evento.prioridade}</td>
+                        <td>{evento.descricao}</td>
+
+                        {/* chama a função buscarTEid passando o evento selecionado */}
+                        <td>
+                        
+
+                        {/* chama a função excluitTEid passando o evento selecionado */}
+                    
+                        
+                        <button className='botao' onClick = {() => this.excluirTEid(evento)}>Excluir</button>
+                    </td>
                     </tr>
                 )
             })
