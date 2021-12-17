@@ -14,7 +14,7 @@ go
 CREATE TABLE Usuario (
 
 IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario),
-IdUsuario UNIQUEIDENTIFIER PRIMARY KEY Default NEWID(), 
+IdUsuario UNIQUEIDENTIFIER PRIMARY KEY Default NEWID(),
 EmailUsuario VARCHAR(200) NOT NULL,
 SenhaUsuario VARCHAR(200) NOT NULL	
 
@@ -54,6 +54,7 @@ CREATE TABLE Chamado (
 
 IdChamado INT PRIMARY KEY IDENTITY,
 IdUsuario UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Usuario(IdUsuario),
+NomeUsuario VARCHAR(100),
 IdInstituicao INT FOREIGN KEY REFERENCES Instituicao (IdInstituicao),
 Data DATETIME,
 TipoProblema VARCHAR (200) NOT NULL,
@@ -62,8 +63,8 @@ Classe VARCHAR (200) NOT NULL,
 Andar VARCHAR (200) NOT NULL,
 Sala VARCHAR (200) NOT NULL,
 Descricao VARCHAR(200),
-Situacao VARCHAR (200) NOT NULL,
-Prioridade VARCHAR (200) NOT NULL,
+Situacao VARCHAR (200),
+Prioridade VARCHAR (200),
 
 );
 go

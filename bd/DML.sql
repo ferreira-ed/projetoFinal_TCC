@@ -6,7 +6,8 @@ Insert into TipoUsuario		(NomeTipoUsuario)
 Values						('Suporte'),
 							('Manutecao'),
 							('Limpeza'),
-							('Administrador');
+							('Administrador'),
+							('Comum');
 		
 go
 
@@ -29,19 +30,16 @@ Values					(1,'Dell', 'Notebook', '1', '200');
 go
 
 Insert Into Chamado (IdUsuario,IdInstituicao,Data,TipoProblema,TipoServico,Classe,Andar,Sala,Descricao,Situacao,Prioridade)
-Values				('E8E0FA11-475F-4E3D-A116-86F320C924A9',1,'29/10/2021','Redes','Manutenção','Cabeamento de redes','2º andar','Sala 13','Cabo danificado na sala','Em atendimento', 'Alta Prioridade');
+Values				('F920A5CB-BE19-4631-A855-2FB689461AD5',1,'29/10/2021','Redes','Manutenção','Cabeamento de redes','2º andar','Sala 13','Cabo danificado na sala','Em atendimento', 'Alta Prioridade');
 
 go
 
 
 Insert into Usuario (IdTipoUsuario,EmailUsuario,SenhaUsuario)
-Values				(5,'usuario@usuario.com','usuario123');
+Values				(5,'usuario2@usuario.com','usuario123');
 
-INSERT INTO Usuario		(NomeUsuario)
-VALUES				    ('UsuarioTeste')
 
-					
-
+				
 
 Insert into TipoUsuario		(NomeTipoUsuario)
 Values						('Comum');
@@ -55,3 +53,7 @@ SELECT*FROM Instituicao
 SELECT*FROM Equipamento
 
 SELECT*FROM Chamado
+
+
+DELETE FROM Chamado
+WHERE IdChamado = 3;
