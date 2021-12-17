@@ -9,6 +9,7 @@ namespace ChamadosSenai.Domains
     {
         public int IdChamado { get; set; }
         public Guid? IdUsuario { get; set; }
+        public string NomeUsuario { get; set; }
         public int? IdInstituicao { get; set; }
         public DateTime? Data { get; set; }
         public string TipoProblema { get; set; }

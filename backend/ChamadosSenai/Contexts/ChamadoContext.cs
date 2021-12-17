@@ -40,7 +40,7 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<Chamado>(entity =>
             {
                 entity.HasKey(e => e.IdChamado)
-                    .HasName("PK__Chamado__5002067975B179D3");
+                    .HasName("PK__Chamado__500206794E7DAA2B");
 
                 entity.ToTable("Chamado");
 
@@ -60,8 +60,11 @@ namespace ChamadosSenai.Contexts
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
+                entity.Property(e => e.NomeUsuario)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Prioridade)
-                    .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
@@ -71,7 +74,6 @@ namespace ChamadosSenai.Contexts
                     .IsUnicode(false);
 
                 entity.Property(e => e.Situacao)
-                    .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
@@ -88,18 +90,18 @@ namespace ChamadosSenai.Contexts
                 entity.HasOne(d => d.IdInstituicaoNavigation)
                     .WithMany(p => p.Chamados)
                     .HasForeignKey(d => d.IdInstituicao)
-                    .HasConstraintName("FK__Chamado__IdInsti__300424B4");
+                    .HasConstraintName("FK__Chamado__IdInsti__29221CFB");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Chamados)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Chamado__IdUsuar__2F10007B");
+                    .HasConstraintName("FK__Chamado__IdUsuar__282DF8C2");
             });
 
             modelBuilder.Entity<Equipamento>(entity =>
             {
                 entity.HasKey(e => e.IdEquipamento)
-                    .HasName("PK__Equipame__E309D87F127A4FAC");
+                    .HasName("PK__Equipame__E309D87F63208AAA");
 
                 entity.ToTable("Equipamento");
 
@@ -123,13 +125,13 @@ namespace ChamadosSenai.Contexts
                 entity.HasOne(d => d.IdInstituicaoNavigation)
                     .WithMany(p => p.Equipamentos)
                     .HasForeignKey(d => d.IdInstituicao)
-                    .HasConstraintName("FK__Equipamen__IdIns__2C3393D0");
+                    .HasConstraintName("FK__Equipamen__IdIns__1DB06A4F");
             });
 
             modelBuilder.Entity<Instituicao>(entity =>
             {
                 entity.HasKey(e => e.IdInstituicao)
-                    .HasName("PK__Institui__B771C0D8573B6889");
+                    .HasName("PK__Institui__B771C0D82540B94F");
 
                 entity.ToTable("Instituicao");
 
@@ -188,7 +190,7 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TipoUsua__CA04062B2E4AD684");
+                    .HasName("PK__TipoUsua__CA04062B9C944955");
 
                 entity.ToTable("TipoUsuario");
 
@@ -200,7 +202,7 @@ namespace ChamadosSenai.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__5B65BF97D7576311");
+                    .HasName("PK__Usuario__5B65BF97106BB405");
 
                 entity.ToTable("Usuario");
 
@@ -219,7 +221,7 @@ namespace ChamadosSenai.Contexts
                 entity.HasOne(d => d.IdTipoUsuarioNavigation)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.IdTipoUsuario)
-                    .HasConstraintName("FK__Usuario__IdTipoU__267ABA7A");
+                    .HasConstraintName("FK__Usuario__IdTipoU__245D67DE");
             });
 
             OnModelCreatingPartial(modelBuilder);

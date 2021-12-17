@@ -53,7 +53,22 @@ namespace ChamadosSenai.Repositories
 
         public List<Chamado> ListarTodos()
         {
-            return ctx.Chamados.ToList();
+            return ctx.Chamados
+                .Select(u => new Chamado()
+                {
+                    IdChamado = u.IdChamado,
+                    NomeUsuario = u.NomeUsuario,
+                    Data = u.Data,
+                    TipoProblema = u.TipoProblema,
+                    TipoServico = u.TipoServico,
+                    Classe = u.Classe,
+                    Andar = u.Andar,
+                    Sala = u.Sala,
+                    Prioridade = u.Prioridade,
+                    Descricao = u.Descricao
+
+                })
+                .ToList();
         }
     }
 }
